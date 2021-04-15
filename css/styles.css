@@ -1,0 +1,42 @@
+body {
+  background-image: url(https://i.pinimg.com/736x/15/61/6f/15616fe62cca82d424b0556668e4248e.jpg);
+}
+
+#contenido {
+  background-color: white;
+  margin-top: 20px;
+}
+
+/* Modifico el h1 directamente con su etiqueta (ya que solo puede existir un h1 en la pagina) */
+h1 {
+  color: white;
+  background-color: chocolate;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#navbar li {
+  display: inline-block;
+
+  transition: 500ms;
+  outline: none;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+
+  text-align: center;
+}
+#navbar a {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  justify-content: space-between;
+}
+
+#navbar li:hover {
+  background-color: brown;
+}
+#navbar {
+  background: black;
+}
