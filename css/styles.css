@@ -40,3 +40,23 @@ h1 {
 #navbar {
   background: black;
 }
+.estrellas {
+  color: orange;
+  float: right;
+}
+.estrellas2 {
+  color: orange;
+}
+
+.subtitulo {
+  display: inline;
+}
+
+#twitter {
+  background-color: #3498db;
+  color: white;
+}
+
+.caja hover {
+  transition: 300m;
+}
