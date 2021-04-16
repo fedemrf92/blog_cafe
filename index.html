@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div id="contenido" class="container">
+    <div id="contenido" class="container px-5">
       <div class="row">
         <div class="col"><h1 class="p-2">FEDE'S REVIEW CAFE</h1></div>
         <div class="col"></div>
@@ -42,7 +42,8 @@
 
       <div id="mainContent">
         <div class="row">
-          <div class="col">
+          <div class="col-8">
+            <h2 id="subtitulo">CAFETERIAS</h2>
             <h3 class="subtitulo">Cafe La Farmacia</h3>
             <span class="estrellas">
               <i class="fas fa-star"></i><i class="fas fa-star"></i
@@ -95,7 +96,7 @@
                 ><i class="fas fa-star"></i><i class="fas fa-star"></i>
               </span>
             </div>
-
+            <hr />
             <h3 class="subtitulo">Cafe Sauco</h3>
             <span class="estrellas">
               <i class="fas fa-star"></i><i class="fas fa-star"></i
@@ -134,7 +135,33 @@
               </span>
             </div>
           </div>
-          <div class="col"></div>
+          <div class="col-4">
+            <div id="sidebar">
+              <h2>About Me</h2>
+              <img
+                class="imagen_propia"
+                src="https://st.depositphotos.com/2069323/2156/i/600/depositphotos_21568785-stock-photo-man-pointing.jpg"
+                alt=""
+              />
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Officia veniam aut quisquam, doloribus eligendi voluptas quo,
+                necessitatibus similique fugit rem in tenetur eius nulla unde ex
+                odio expedita repellat. Quam!
+              </p>
+            </div>
+            <div id="cuadro_contacto">
+              <form action="">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" type="nombre" />
+                <label for="correo">Correo</label>
+                <input id="correo" type="correo" />
+                <label for="contrasena">Contrasena</label>
+                <input id="contrasena" type="contrasena" />
+                <input type="button" value="entrar" />
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
