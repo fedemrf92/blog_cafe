@@ -24,147 +24,161 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div id="contenido" class="container px-5">
-      <div class="row">
-        <div class="col"><h1 class="p-2">FEDE'S REVIEW CAFE</h1></div>
-        <div class="col"></div>
-      </div>
-
-      <div id="navbar">
-        <ul>
-          <li><a href="">Inicio</a></li>
-          <li><a href="">Tipos de Cafe</a></li>
-          <li><a href="">Experiencias</a></li>
-
-          <li><a href="">Contacto</a></li>
-        </ul>
-      </div>
-
-      <div id="mainContent">
+    <div id="app">
+      <div id="contenido" class="container px-5">
         <div class="row">
-          <div class="col-8">
-            <h2 id="subtitulo">CAFETERIAS</h2>
-            <h3 class="subtitulo">Cafe La Farmacia</h3>
-            <span class="estrellas">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </span>
-            <div>
-              <img
-                src="https://media-cdn.tripadvisor.com/media/photo-s/14/f0/c0/37/photo3jpg.jpg"
-                alt=""
-              />
-              <ul>
-                <li class="caja">
-                  <a id="twitter" href="">
-                    <span><i class="fab fa-twitter"></i></span>
-                    <span class="title"></span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>Publicado el miercoles 15 de Abril del Año 2021</div>
-            <p>
-              Cuando visite el cafe la farmacia no sabia que esperar,siempre
-              pasaba por la puerta cuando tomaba el 104 pero nunca habia podido
-              entrar. Mi primera imprecion fue muy buena, se trataba de un lugar
-              acojedor ,un poco mas pequeño de lo que me habia imaginado pero
-              muy bien conservado. Adentro me encontre con un personal
-              extremadamente amable ,lo cual me sorprendio porque habia leido
-              que el personal era muy diferente a eso. La comida es muy buena ,
-              es un poco diferente: "Brownie con Sal marina", "cuadrado de
-              hawai", "torta de manzana", pero la calidad es muy buena y los
-              precios tambien. El café es de buena calidad, por lo que me
-              encantaria volver en un futuro.
-            </p>
-            <div>
-              Comida:<span class="estrellas2">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </span>
-            </div>
-            <div>
-              Precio:<span class="estrellas2">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </span>
-            </div>
-            <div>
-              Lugar:
-              <span class="estrellas2">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </span>
-            </div>
-            <hr />
-            <h3 class="subtitulo">Cafe Sauco</h3>
-            <span class="estrellas">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
-            </span>
+          <div class="col"><h1 class="p-2">FEDE'S REVIEW CAFE</h1></div>
+          <div class="col"></div>
+        </div>
 
-            <div>Publicado el miercoles 15 de Abril del Año 2021</div>
-            <p>
-              Hace mucho que queria visitar esta cafeteria, y al fin pude
-              lograrlo. El lugar es lindo,un poco apretado por lo que es dificil
-              de charlar tranquilamente, es como una cafeteria express te sentas
-              comes algo por 15-20 minutos y te vas. La comida me gusta mucho,
-              recomiendo el budin de cacao y cerveza negra, y el alfajor de
-              salchichon de chocolate. El cafe no me gusto del todo, no digo que
-              sea malo solo no es mi estilo. El precio es acorde. Volveria en el
-              futuro.
-            </p>
+        <div id="navbar">
+          <ul>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Tipos de Cafe</a></li>
+            <li><a href="">Experiencias</a></li>
 
-            <div>
-              Comida:<span class="estrellas2">
+            <li><a href="">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div id="mainContent">
+          <div class="row">
+            <div class="col-8">
+              <div v-for="cafeteria in cafeterias">
+                <h2 id="subtitulo">CAFETERIAS</h2>
+                <h3 class="subtitulo">{{cafeteria.nombre}}</h3>
+                <span v-if="cafeteria.estrellas===1" class="estrellas">
+                  <i class="fas fa-star"></i>
+                </span>
+                <span v-if="cafeteria.estrellas===2" class="estrellas">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </span>
+                <span v-if="cafeteria.estrellas===3" class="estrellas">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </span>
+                <span v-if="cafeteria.estrellas===4" class="estrellas">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </span>
+                <span v-if="cafeteria.estrellas===5" class="estrellas">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </span>
+                <div>
+                  <img
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/14/f0/c0/37/photo3jpg.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>Publicado el miercoles 15 de Abril del Año 2021</div>
+                <p>
+                  Cuando visite el cafe la farmacia no sabia que esperar,siempre
+                  pasaba por la puerta cuando tomaba el 104 pero nunca habia
+                  podido entrar. Mi primera imprecion fue muy buena, se trataba
+                  de un lugar acojedor ,un poco mas pequeño de lo que me habia
+                  imaginado pero muy bien conservado. Adentro me encontre con un
+                  personal extremadamente amable ,lo cual me sorprendio porque
+                  habia leido que el personal era muy diferente a eso. La comida
+                  es muy buena , es un poco diferente: "Brownie con Sal marina",
+                  "cuadrado de hawai", "torta de manzana", pero la calidad es
+                  muy buena y los precios tambien. El café es de buena calidad,
+                  por lo que me encantaria volver en un futuro.
+                </p>
+                <div>
+                  Comida:<span class="estrellas2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i
+                    ><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </span>
+                </div>
+                <div>
+                  Precio:<span class="estrellas2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i
+                    ><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </span>
+                </div>
+                <div>
+                  Lugar:
+                  <span class="estrellas2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i
+                    ><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </span>
+                </div>
+              </div>
+
+              <hr />
+              <h3 class="subtitulo">Cafe Sauco</h3>
+              <span class="estrellas">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                ><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
               </span>
-            </div>
-            <div>
-              Precio:<span class="estrellas2">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </span>
-            </div>
-            <div>
-              Lugar:
-              <span class="estrellas2">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i>
-              </span>
-            </div>
-          </div>
-          <div class="col-4">
-            <div id="sidebar">
-              <h2>About Me</h2>
-              <img
-                class="imagen_propia"
-                src="https://st.depositphotos.com/2069323/2156/i/600/depositphotos_21568785-stock-photo-man-pointing.jpg"
-                alt=""
-              />
+
+              <div>Publicado el miercoles 15 de Abril del Año 2021</div>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Officia veniam aut quisquam, doloribus eligendi voluptas quo,
-                necessitatibus similique fugit rem in tenetur eius nulla unde ex
-                odio expedita repellat. Quam!
+                Hace mucho que queria visitar esta cafeteria, y al fin pude
+                lograrlo. El lugar es lindo,un poco apretado por lo que es
+                dificil de charlar tranquilamente, es como una cafeteria express
+                te sentas comes algo por 15-20 minutos y te vas. La comida me
+                gusta mucho, recomiendo el budin de cacao y cerveza negra, y el
+                alfajor de salchichon de chocolate. El cafe no me gusto del
+                todo, no digo que sea malo solo no es mi estilo. El precio es
+                acorde. Volveria en el futuro.
               </p>
+
+              <div>
+                Comida:<span class="estrellas2">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </span>
+              </div>
+              <div>
+                Precio:<span class="estrellas2">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </span>
+              </div>
+              <div>
+                Lugar:
+                <span class="estrellas2">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </span>
+              </div>
             </div>
-            <div id="cuadro_contacto">
-              <form action="">
-                <label for="nombre">Nombre</label>
-                <input id="nombre" type="nombre" />
-                <label for="correo">Correo</label>
-                <input id="correo" type="correo" />
-                <label for="contrasena">Contrasena</label>
-                <input id="contrasena" type="contrasena" />
-                <input type="button" value="entrar" />
-              </form>
+            <div class="col-4">
+              <div id="sidebar">
+                <h2>About Me</h2>
+                <img
+                  class="imagen_propia"
+                  src="https://st.depositphotos.com/2069323/2156/i/600/depositphotos_21568785-stock-photo-man-pointing.jpg"
+                  alt=""
+                />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Officia veniam aut quisquam, doloribus eligendi voluptas quo,
+                  necessitatibus similique fugit rem in tenetur eius nulla unde
+                  ex odio expedita repellat. Quam!
+                </p>
+              </div>
+              <div id="cuadro_contacto">
+                <form action="">
+                  <label for="nombre">Nombre</label>
+                  <input id="nombre" type="nombre" />
+                  <label for="correo">Correo</label>
+                  <input id="correo" type="correo" />
+                  <label for="contrasena">Contrasena</label>
+                  <input id="contrasena" type="contrasena" />
+                  <input type="button" value="entrar" />
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="js/app.js"></script>
   </body>
-  <script src="js/app.js"></script>
 </html>
